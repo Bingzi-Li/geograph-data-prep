@@ -1,0 +1,10 @@
+Google Maps Distance Matrix API
+https://developers.google.com/maps/documentation/distance-matrix/intro
+
+Onlne IDE (connected to Github)
+https://codenvy.io/dashboard/#/workspaces
+
+Basic ideas:
+
+	1. Get distance between vertices as weight of edges
+	2. Eliminate those edges weight = sum of any other edges
