@@ -4,6 +4,9 @@ https://developers.google.com/maps/documentation/distance-matrix/intro
 Onlne IDE (connected to Github)
 https://codenvy.io/dashboard/#/workspaces
 
+Graph Tutorial:
+https://developers.sap.com/tutorials/hana-graph-overview-setup.html
+
 Basic ideas:
 
 	1. Get distance between vertices as weight of edges
