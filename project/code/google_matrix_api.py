@@ -4,6 +4,7 @@
 import requests
 outputFormat = 'json'
 API_KEY = 'AIzaSyBzNUBMRf8VYahpGY9HF76b42e08ZpDPCI'
+# don't ever dream of using my api key :) I restricted it to my IP
 
 def get_distance(s, d):
     parameters = 'origins=' + s + '|' + d
