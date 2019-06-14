@@ -74,7 +74,7 @@ class Graph:
         self.vert_dict[frm].add_neighbor(self.vert_dict[to], cost)
         self.vert_dict[to].add_neighbor(self.vert_dict[frm], cost)
     
-    def delete_edge():
+    def delete_edge(self, frm, to):
         #TODO:
         pass
 
@@ -135,7 +135,8 @@ def dijkstra(aGraph, start, target):
         unvisited_queue = [(v.get_distance(),v) for v in aGraph if not v.visited]
         heapq.heapify(unvisited_queue)
     print("---distance---\n",current.get_distance())
-    
+
+
 if __name__ == '__main__':
 
     g = Graph()
