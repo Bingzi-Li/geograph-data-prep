@@ -15,6 +15,9 @@ class Vertex:
 
     def add_neighbor(self, neighbor, weight=0):
         self.adjacent[neighbor] = weight
+    
+    def delete_neighbor(self, neighbor):
+        del self.adjacent[neighbor]
 
     def get_connections(self):
         return self.adjacent.keys()  
@@ -75,8 +78,8 @@ class Graph:
         self.vert_dict[to].add_neighbor(self.vert_dict[frm], cost)
     
     def delete_edge(self, frm, to):
-        #TODO:
-        pass
+        self.vert_dict[frm].delete_neighbor(self.vert_dict[to])
+        self.vert_dict[to].delete_neighbor(self.vert_dict[frm])
 
     def get_vertices(self):
         return self.vert_dict.keys()
