@@ -73,6 +73,10 @@ class Graph:
 
         self.vert_dict[frm].add_neighbor(self.vert_dict[to], cost)
         self.vert_dict[to].add_neighbor(self.vert_dict[frm], cost)
+    
+    def delete_edge():
+        #TODO:
+        pass
 
     def get_vertices(self):
         return self.vert_dict.keys()

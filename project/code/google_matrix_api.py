@@ -20,4 +20,4 @@ def get_distance(s, d):
 print(get_distance('-77.18457758276422,38.93989291394156','-77.07489935925479,38.743491801018926'))
 
 
-https://maps.googleapis.com/maps/api/distancematrix/json?origins=-77.18457758276422,38.93989291394156&destinations=-77.07489935925479,38.743491801018926&mode=walking&key=AIzaSyBzNUBMRf8VYahpGY9HF76b42e08ZpDPCI
+#https://maps.googleapis.com/maps/api/distancematrix/json?origins=-77.18457758276422,38.93989291394156&destinations=-77.07489935925479,38.743491801018926&mode=walking&key=AIzaSyBzNUBMRf8VYahpGY9HF76b42e08ZpDPCI
