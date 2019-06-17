@@ -1,7 +1,4 @@
-# google distance matrix doesn't work, always zero result, testing using haversine
-
-#from google_matrix_api import get_distance
-from haversine import haversine
+from google_matrix_api import get_distance
 import json
 
 coordinates = []

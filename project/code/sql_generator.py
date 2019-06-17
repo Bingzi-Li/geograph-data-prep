@@ -39,7 +39,10 @@ def sql_generator():
     for edge in edge_list:
         sql_file.write('INSERT INTO "EDGES" VALUES (' + str(edge_id) + ',' + str(edge['distance']) + ',' + str(edge['origin']) + ',' + str(edge['destination']) + ') ;\n')
 <<<<<<< HEAD
+<<<<<<< HEAD
         sql_file.write('INSERT INTO "EDGES" VALUES (' + str(edge_id) + ',' + str(edge['distance']) + ',' + str(edge['destination']) + ',' + str(edge['origin']) + ') ;\n')
+=======
+>>>>>>> refs/heads/master
 =======
 >>>>>>> refs/heads/master
         edge_id += 1

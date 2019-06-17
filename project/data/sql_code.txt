@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 create schema:
 CREATE SCHEMA <schema_name>;
 SET SCHEMA <schema_name>;
