@@ -1,4 +1,7 @@
-from google_matrix_api import get_distance
+# google distance matrix doesn't work, always zero result, testing using haversine
+
+#from google_matrix_api import get_distance
+from haversine import haversine
 import json
 
 coordinates = []
@@ -12,9 +15,14 @@ with open('../data/libraries.json') as json_file:
         vertex_list.append(library['properties']['OBJECTID'])
     for i in range(0,len(coordinates)-1):
         for j in range(i+1, len(coordinates)):
-            s = str(coordinates[i]['coord'][0]) + ',' + str(coordinates[i]['coord'][1])
-            d = str(coordinates[j]['coord'][0]) + ',' + str(coordinates[j]['coord'][1])
-            dist = get_distance(s,d)
+            #s = str(coordinates[i]['coord'][0]) + ',' + str(coordinates[i]['coord'][1])
+            #d = str(coordinates[j]['coord'][0]) + ',' + str(coordinates[j]['coord'][1])
+            #dist = get_distance(s,d)
+            s_long = coordinates[i]['coord'][0]
+            s_la = coordinates[i]['coord'][1]
+            d_long = coordinates[j]['coord'][0]
+            d_la = coordinates[j]['coord'][1]
+            dist = haversine(s_long, s_la, d_long, d_la)
             distance.append({'origin':coordinates[i]['ID'], 'destination':coordinates[j]['ID'], 'distance':dist})
 
 with open('../data/distance.json', 'w') as fp:
