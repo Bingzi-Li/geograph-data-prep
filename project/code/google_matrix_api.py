@@ -5,12 +5,12 @@
 from urllib.request import urlopen
 import json
 outputFormat = 'json'
-API_KEY = 'AIzaSyBzNUBMRf8VYahpGY9HF76b42e08ZpDPCI'
+API_KEY = 'AIzaSyDCe5RrfalnFFqsPTpZ_r7OWR7glgYPsl8'
 # don't ever dream of using my api key :) I restricted it to my IP
 
 def get_distance(s, d):
     parameters = 'origins=place_id:' + s + '&destinations=place_id:' + d
-    url = 'https://maps.googleapis.com/maps/api/distancematrix/' + outputFormat + '?'  + parameters + '&mode=walking' + '&key=' + API_KEY
+    url = 'https://maps.googleapis.com/maps/api/distancematrix/' + outputFormat + '?'  + parameters + '&mode=driving' + '&key=' + API_KEY
     print(url)
     with urlopen(url) as response:
         response_content = response.read()
@@ -19,4 +19,4 @@ def get_distance(s, d):
     return dist
     
 if __name__ == '__main__':
-    print(get_distance('ChIJH81kooxGtokRj5fCgI78fS4','ChIJ-UBNwLKst4kRVdYYR6w497Y'))
+    print(get_distance('ChIJ1QmPYZFOtokRiYgIraVyXGY','ChIJ_dk6Z1ZLtokR03Voe_4PYa4'))

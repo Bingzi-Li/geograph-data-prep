@@ -75,11 +75,11 @@ class Graph:
             self.add_vertex(to)
 
         self.vert_dict[frm].add_neighbor(self.vert_dict[to], cost)
-        self.vert_dict[to].add_neighbor(self.vert_dict[frm], cost)
+        #self.vert_dict[to].add_neighbor(self.vert_dict[frm], cost)
     
     def delete_edge(self, frm, to):
         self.vert_dict[frm].delete_neighbor(self.vert_dict[to])
-        self.vert_dict[to].delete_neighbor(self.vert_dict[frm])
+        #self.vert_dict[to].delete_neighbor(self.vert_dict[frm])
 
     def get_vertices(self):
         return self.vert_dict.keys()
@@ -138,6 +138,7 @@ def dijkstra(aGraph, start, target):
         unvisited_queue = [(v.get_distance(),v) for v in aGraph if not v.visited]
         heapq.heapify(unvisited_queue)
     print("---distance---\n",current.get_distance())
+    #return current.get_distance()
 
 
 if __name__ == '__main__':
@@ -169,6 +170,7 @@ if __name__ == '__main__':
             print ('( %s , %s, %3d)'  % ( vid, wid, v.get_weight(w)))
 
     dijkstra(g, g.get_vertex('a'), g.get_vertex('e')) 
+    dijkstra(g, g.get_vertex('c'), g.get_vertex('e')) 
 
     target = g.get_vertex('e')
     path = [target.get_id()]
