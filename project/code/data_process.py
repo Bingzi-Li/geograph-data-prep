@@ -1,28 +1,23 @@
-from graph import Graph, Vertex, dijkstra
-import json
+#from graph import Graph, Vertex, dijkstra
+from debug import Graph, dijkstra
+import json, copy
 
-g = Graph()
 edge_list = []
 
-# add vertices
-with open('../data/vertex_list.json') as json_file:
-    vertex_list = json.load(json_file)
-    for vertex in vertex_list:
-        g.add_vertex(vertex['ID'])
-    
 # add edges
 with open('../data/distance.json') as json_file:
     dist_list = json.load(json_file)
+    g = Graph(len(dist_list))
     for dist in dist_list:
         g.add_edge(dist['origin'], dist['destination'], float(dist['distance']))
 
 # clean unwanted edges
 for dist in dist_list:
     # find shortest path without that edge
-    g.delete_edge(dist['origin'], dist['destination'])
-    shortest = dijkstra(g, g.get_vertex(dist['origin']), g.get_vertex(dist['destination']))
+    g.delete_edge(dist['origin'], dist['destination'], float(dist['distance']))
+    shortest = dijkstra(g, dist['origin'], dist['destination'])
     # if there is no anther shortest, add that edge back
-    if shortest < float(dist['distance']):
+    if shortest > float(dist['distance']):
         g.add_edge(dist['origin'], dist['destination'], float(dist['distance']))
         edge_list.append({'origin':dist['origin'], 'destination':dist['destination'], 'distance':dist['distance']})
 

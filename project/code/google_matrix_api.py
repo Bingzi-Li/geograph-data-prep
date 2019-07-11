@@ -10,7 +10,7 @@ API_KEY = 'AIzaSyDCe5RrfalnFFqsPTpZ_r7OWR7glgYPsl8'
 
 def get_distance(s, d):
     parameters = 'origins=place_id:' + s + '&destinations=place_id:' + d
-    url = 'https://maps.googleapis.com/maps/api/distancematrix/' + outputFormat + '?'  + parameters + '&mode=driving' + '&key=' + API_KEY
+    url = 'https://maps.googleapis.com/maps/api/distancematrix/' + outputFormat + '?'  + parameters + '&mode=bicycling' + '&key=' + API_KEY
     print(url)
     with urlopen(url) as response:
         response_content = response.read()

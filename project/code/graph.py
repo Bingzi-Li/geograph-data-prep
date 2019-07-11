@@ -2,6 +2,7 @@
 code is modified based on:
 source: https://www.bogotobogo.com/python/python_Dijkstras_Shortest_Path_Algorithm.php
 '''
+import copy
 class Vertex:
     def __init__(self, node):
         self.id = node
@@ -73,7 +74,6 @@ class Graph:
             self.add_vertex(frm)
         if to not in self.vert_dict:
             self.add_vertex(to)
-
         self.vert_dict[frm].add_neighbor(self.vert_dict[to], cost)
         #self.vert_dict[to].add_neighbor(self.vert_dict[frm], cost)
     
@@ -137,7 +137,7 @@ def dijkstra(aGraph, start, target):
         # 2. Put all vertices not visited into the queue
         unvisited_queue = [(v.get_distance(),v) for v in aGraph if not v.visited]
         heapq.heapify(unvisited_queue)
-    print("---distance---\n",current.get_distance())
+        print("---distance---\n",current.get_distance())
     #return current.get_distance()
 
 
@@ -169,10 +169,11 @@ if __name__ == '__main__':
             wid = w.get_id()
             print ('( %s , %s, %3d)'  % ( vid, wid, v.get_weight(w)))
 
-    dijkstra(g, g.get_vertex('a'), g.get_vertex('e')) 
-    dijkstra(g, g.get_vertex('c'), g.get_vertex('e')) 
+    #gcopy = copy.deepcopy(g)
+    #dijkstra(gcopy, gcopy.get_vertex('a'), gcopy.get_vertex('e')) 
+    dijkstra(g, g.get_vertex('b'), g.get_vertex('f')) 
 
-    target = g.get_vertex('e')
+    target = g.get_vertex('d')
     path = [target.get_id()]
     shortest(target, path)
     print ('The shortest path : %s' %(path[::-1]))
